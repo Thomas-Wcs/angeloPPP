@@ -4,6 +4,7 @@ import Footer from '../footer/Footer';
 import './HomePage.css';
 import getMovies from './GetMovies';
 import QuestionContainer from '../questionContainer/QuestionContainer';
+import ContactForm from '../formulaire/ContactForm';
 
 const defaultPoster =
   'https://via.placeholder.com/500x750.png?text=Image+not+available';
@@ -57,6 +58,7 @@ const HomePage = () => {
         </section>
       </div>
       <Footer />
+      <ContactForm />
     </div>
   );
 };
