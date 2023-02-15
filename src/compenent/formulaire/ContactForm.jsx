@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ContactForm.css';
-import NavBar from '../navBar/NavBar';
 
 function ContactForm() {
   const [firstName, setFirstName] = useState('');
@@ -15,7 +14,6 @@ function ContactForm() {
 
   return (
     <div>
-      <NavBar />
       <form onSubmit={handleSubmit} className='contact-form'>
         <div className='form-group'>
           <label htmlFor='first-name'>Prénom:</label>

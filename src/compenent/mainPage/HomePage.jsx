@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '../navBar/NavBar';
 import Footer from '../footer/Footer';
 import './HomePage.css';
 import getMovies from './GetMovies';
-import ContactForm from '../formulaire/ContactForm';
 import TagSection from '../tagSection/TagSection';
 import Questionnaire from '../questions/Questionnaire';
 
@@ -25,7 +23,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <NavBar />
       <h1 className='page-title'>Kesqu'onRegarde</h1>
       <div className='search-container'>
         <input
