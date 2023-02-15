@@ -24,7 +24,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <NavBar />
       <h1 className='page-title'>Kesqu'onRegarde</h1>
       <div className='search-container'>
         <input
@@ -51,14 +50,18 @@ const HomePage = () => {
                 />
               </div>
               <p className='movie-title'>{movie.title}</p>
-              {/* <p className='movie-title'>{movie.popularity}</p> */}
+              <p className='movie-title'>
+                {movie.vote_average
+                  ? movie.vote_average.toFixed(1) + '/10 ⭐'
+                  : '-'}
+              </p>
+
               {/* <p className='movie-title'>{movie.overview}</p> */}
             </article>
           ))}
         </section>
       </div>
       <Footer />
-      <ContactForm />
     </div>
   );
 };

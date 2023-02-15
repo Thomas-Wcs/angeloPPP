@@ -2,22 +2,7 @@ import React, { useState } from 'react';
 import './QuestionContainer.css';
 
 const QuestionContainer = () => {
-  const [firstQuestionAnswer, setFirstQuestionAnswer] = useState(null);
-  const [secondQuestionAnswer, setSecondQuestionAnswer] = useState(null);
-  const [thirdQuestionAnswer, setThirdQuestionAnswer] = useState(null);
   const [selectedTags, setSelectedTags] = useState([]);
-
-  const handleFirstQuestion = (answer) => {
-    setFirstQuestionAnswer(answer);
-  };
-
-  const handleSecondQuestion = (answer) => {
-    setSecondQuestionAnswer(answer);
-  };
-
-  const handleThirdQuestion = (answer) => {
-    setThirdQuestionAnswer(answer);
-  };
 
   const handleTagSelection = (tag) => {
     if (!selectedTags.includes(tag)) {
@@ -29,17 +14,6 @@ const QuestionContainer = () => {
 
   return (
     <div className='question-container-tag-div'>
-      <div className='question-container-div'>
-        <p>Première question : Est-ce que vous aimez les films droles ?</p>
-        <button onClick={() => handleFirstQuestion('oui')}>Oui</button>
-        <button onClick={() => handleFirstQuestion('non')}>Non</button>
-        <p>Deuxième question : Est-ce que vous aimez les chiens ?</p>
-        <button onClick={() => handleSecondQuestion('oui')}>Oui</button>
-        <button onClick={() => handleSecondQuestion('non')}>Non</button>
-        <p>Troisième question : Est-ce que vous aimez les oiseaux ?</p>
-        <button onClick={() => handleThirdQuestion('oui')}>Oui</button>
-        <button onClick={() => handleThirdQuestion('non')}>Non</button>
-      </div>
       <div className='tag-container-div'>
         <p>Quels sont vos tags préférés ?</p>
         <div>
