@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactForm.css';
+import NavBar from '../navBar/NavBar';
 
 function ContactForm() {
   const [firstName, setFirstName] = useState('');
@@ -13,50 +14,53 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='contact-form'>
-      <div className='form-group'>
-        <label htmlFor='first-name'>Prénom:</label>
-        <input
-          type='text'
-          id='first-name'
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          className='form-control'
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='last-name'>Nom:</label>
-        <input
-          type='text'
-          id='last-name'
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className='form-control'
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='email'>E-mail:</label>
-        <input
-          type='email'
-          id='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className='form-control'
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='message'>Message:</label>
-        <textarea
-          id='message'
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className='form-control'
-        ></textarea>
-      </div>
-      <button type='submit' className='btn btn-primary'>
-        Envoyer
-      </button>
-    </form>
+    <div>
+      <NavBar />
+      <form onSubmit={handleSubmit} className='contact-form'>
+        <div className='form-group'>
+          <label htmlFor='first-name'>Prénom:</label>
+          <input
+            type='text'
+            id='first-name'
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='last-name'>Nom:</label>
+          <input
+            type='text'
+            id='last-name'
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='email'>E-mail:</label>
+          <input
+            type='email'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='message'>Message:</label>
+          <textarea
+            id='message'
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className='form-control'
+          ></textarea>
+        </div>
+        <button type='submit' className='btn btn-primary'>
+          Envoyer
+        </button>
+      </form>
+    </div>
   );
 }
 

@@ -3,8 +3,9 @@ import NavBar from '../navBar/NavBar';
 import Footer from '../footer/Footer';
 import './HomePage.css';
 import getMovies from './GetMovies';
-import QuestionContainer from '../questionContainer/QuestionContainer';
 import ContactForm from '../formulaire/ContactForm';
+import TagSection from '../tagSection/TagSection';
+import Questionnaire from '../questions/Questionnaire';
 
 const defaultPoster =
   'https://via.placeholder.com/500x750.png?text=Image+not+available';
@@ -36,7 +37,10 @@ const HomePage = () => {
         />
       </div>
       <div className='question-section'>
-        <QuestionContainer />
+        <div>
+          <Questionnaire />
+          <TagSection />
+        </div>
         <section className='movies-section'>
           {movies.map((movie) => (
             <article className='movie-card' key={movie.id}>
@@ -51,14 +55,18 @@ const HomePage = () => {
                 />
               </div>
               <p className='movie-title'>{movie.title}</p>
-              {/* <p className='movie-title'>{movie.popularity}</p> */}
+              <p className='movie-title'>
+                {movie.vote_average
+                  ? movie.vote_average.toFixed(1) + '/10 ⭐'
+                  : '-'}
+              </p>
+
               {/* <p className='movie-title'>{movie.overview}</p> */}
             </article>
           ))}
         </section>
       </div>
       <Footer />
-      <ContactForm />
     </div>
   );
 };
