@@ -3,8 +3,9 @@ import NavBar from '../navBar/NavBar';
 import Footer from '../footer/Footer';
 import './HomePage.css';
 import getMovies from './GetMovies';
-import QuestionContainer from '../questionContainer/QuestionContainer';
 import ContactForm from '../formulaire/ContactForm';
+import TagSection from '../tagSection/TagSection';
+import Questionnaire from '../questions/Questionnaire';
 
 const defaultPoster =
   'https://via.placeholder.com/500x750.png?text=Image+not+available';
@@ -24,6 +25,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <NavBar />
       <h1 className='page-title'>Kesqu'onRegarde</h1>
       <div className='search-container'>
         <input
@@ -35,7 +37,10 @@ const HomePage = () => {
         />
       </div>
       <div className='question-section'>
-        <QuestionContainer />
+        <div>
+          <Questionnaire />
+          <TagSection />
+        </div>
         <section className='movies-section'>
           {movies.map((movie) => (
             <article className='movie-card' key={movie.id}>

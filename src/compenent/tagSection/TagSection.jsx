@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './QuestionContainer.css';
+import './TagSection.css';
 
-const QuestionContainer = () => {
+const TagSection = () => {
   const [selectedTags, setSelectedTags] = useState([]);
 
   const handleTagSelection = (tag) => {
@@ -61,4 +61,4 @@ const QuestionContainer = () => {
   );
 };
 
-export default QuestionContainer;
+export default TagSection;

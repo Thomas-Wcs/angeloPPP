@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './question.css';
+import './Questionnaire.css';
 
 function Questionnaire() {
   const [selectedOption1, setSelectedOption1] = useState('');
