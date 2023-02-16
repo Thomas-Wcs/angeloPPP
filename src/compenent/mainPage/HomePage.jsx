@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../footer/Footer';
 import './HomePage.css';
-import Questionnaire from '../questions/Questionnaire';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 const defaultPoster =
   'https://via.placeholder.com/500x750.png?text=Image+not+available';
@@ -21,16 +20,24 @@ const HomePage = () => {
   }, [query]);
 
   const getMovies = async (query = '') => {
-    const defaultQuery = 'lover';
+    const defaultQuery = '';
     query = query.trim() || defaultQuery;
+    let page = 1;
+    const results = [];
+
     try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=e5952f2708f5284e252d4e51b51aec21&query=${query}`
-      );
-      return response.data.results;
+      while (page <= 2) {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/search/multi?api_key=e5952f2708f5284e252d4e51b51aec21&query=${query}&page=${page}`
+        );
+        results.push(...response.data.results);
+        page++;
+      }
     } catch (error) {
       console.error(error);
     }
+
+    return results;
   };
 
   return (
@@ -46,15 +53,12 @@ const HomePage = () => {
         />
       </div>
       <div className='question-section'>
-        <div>
-          <Questionnaire />
-        </div>
         <section className='movies-section'>
           {movies
             .sort((a, b) => b.vote_average - a.vote_average)
             // .slice(0, 10)
             .map((movie) => (
-              <article className='movie-card' key={movie.id}>
+              <article className='movie-card' key={uuidv4()}>
                 <div className='movie-poster'>
                   <img
                     src={
@@ -65,20 +69,22 @@ const HomePage = () => {
                     alt={movie.title}
                   />
                 </div>
-                <p className='movie-title'>{movie.title}</p>
+                <h3 className='movie-title'>{movie.title}</h3>
                 <p className='movie-title'>
                   {movie.vote_average
                     ? movie.vote_average.toFixed(1) + '/10 ⭐'
                     : '-'}
                 </p>
-
-                {/* <p className='movie-title'>{movie.overview}</p> */}
+                <p className='movie-title'> Type : {movie.media_type}</p>
+                <p className='movie-title'>
+                  Langue : {movie.original_language}
+                </p>
               </article>
             ))}
         </section>
       </div>
-      <Footer />
     </div>
   );
 };
+
 export default HomePage;
