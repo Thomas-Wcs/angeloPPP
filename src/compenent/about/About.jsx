@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from '../searchBar/SearchBar';
 
 const About = () => {
   return (
@@ -11,6 +12,7 @@ const About = () => {
         voluptate repellendus. Fuga eos ipsum quos delectus dolore dicta labore
         debitis?
       </p>
+      <SearchBar />
       <br />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis

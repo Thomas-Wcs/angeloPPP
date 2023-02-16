@@ -3,6 +3,7 @@ import './TagSection.css';
 
 const TagSection = () => {
   const [selectedTags, setSelectedTags] = useState([]);
+  console.log(selectedTags);
 
   const handleTagSelection = (tag) => {
     if (!selectedTags.includes(tag)) {
@@ -10,6 +11,7 @@ const TagSection = () => {
     } else {
       setSelectedTags(selectedTags.filter((t) => t !== tag));
     }
+    debugger;
   };
 
   return (

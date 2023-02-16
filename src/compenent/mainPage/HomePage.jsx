@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
-
-const defaultPoster =
-  'https://via.placeholder.com/500x750.png?text=Image+not+available';
+import SearchBar from '../searchBar/SearchBar';
+import MovieList from '../movieList/MovieList';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -43,45 +41,9 @@ const HomePage = () => {
   return (
     <div>
       <h1 className='page-title'>Kesqu'onRegarde</h1>
-      <div className='search-container'>
-        <input
-          className='search-input'
-          type='text'
-          placeholder='Cherchez votre film...'
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </div>
+      <SearchBar query={query} setQuery={setQuery} />
       <div className='question-section'>
-        <section className='movies-section'>
-          {movies
-            .sort((a, b) => b.vote_average - a.vote_average)
-            // .slice(0, 10)
-            .map((movie) => (
-              <article className='movie-card' key={uuidv4()}>
-                <div className='movie-poster'>
-                  <img
-                    src={
-                      movie.poster_path
-                        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                        : defaultPoster
-                    }
-                    alt={movie.title}
-                  />
-                </div>
-                <h3 className='movie-title'>{movie.title}</h3>
-                <p className='movie-title'>
-                  {movie.vote_average
-                    ? movie.vote_average.toFixed(1) + '/10 ⭐'
-                    : '-'}
-                </p>
-                <p className='movie-title'> Type : {movie.media_type}</p>
-                <p className='movie-title'>
-                  Langue : {movie.original_language}
-                </p>
-              </article>
-            ))}
-        </section>
+        <MovieList movies={movies} />
       </div>
     </div>
   );
