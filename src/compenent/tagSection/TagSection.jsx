@@ -9,9 +9,8 @@ const TagSection = () => {
     if (!selectedTags.includes(tag)) {
       setSelectedTags([...selectedTags, tag]);
     } else {
-      setSelectedTags(selectedTags.filter((t) => t !== tag));
+      setSelectedTags(selectedTags.filter((tom) => tom !== tag));
     }
-    debugger;
   };
 
   return (
@@ -22,17 +21,17 @@ const TagSection = () => {
           <input
             type='checkbox'
             id='tag1'
-            onChange={() => handleTagSelection('tag1')}
+            onChange={() => handleTagSelection('Action')}
           />
-          <label htmlFor='tag1'>Tag 1</label>
+          <label htmlFor='tag1'>Action</label>
         </div>
         <div>
           <input
             type='checkbox'
             id='tag2'
-            onChange={() => handleTagSelection('tag2')}
+            onChange={() => handleTagSelection('aventure')}
           />
-          <label htmlFor='tag2'>Tag 2</label>
+          <label htmlFor='tag2'>Aventure</label>
         </div>
         <div>
           <input
