@@ -9,7 +9,7 @@ const TagSection = () => {
     if (!selectedTags.includes(tag)) {
       setSelectedTags([...selectedTags, tag]);
     } else {
-      setSelectedTags(selectedTags.filter((tom) => tom !== tag));
+      setSelectedTags(selectedTags.filter((hi) => hi !== tag));
     }
   };
 

@@ -8,6 +8,7 @@ const MovieList = ({ movies }) => {
     <div className='question-section'>
       <section className='movies-section'>
         {movies
+          // .slice(0, 15)
           .sort((a, b) => b.vote_average - a.vote_average)
           .map((movie) => (
             <article className='movie-card' key={uuidv4()}>
@@ -29,6 +30,7 @@ const MovieList = ({ movies }) => {
               </p>
               <p className='movie-title'> Type : {movie.media_type}</p>
               <p className='movie-title'>Langue : {movie.original_language}</p>
+              {/* <p className='movie-title'>Prod : {movie.vote_average}</p> */}
             </article>
           ))}
       </section>

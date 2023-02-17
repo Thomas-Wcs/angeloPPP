@@ -6,6 +6,7 @@ import About from './compenent/about/About';
 import NavBar from './compenent/navBar/NavBar';
 import TagSection from './compenent/tagSection/TagSection';
 import TableauGenres from './compenent/genres/TableauGenres';
+import Questionnaire from './compenent/questions/Questionnaire';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             element={
               <div>
                 <TagSection />
+                <Questionnaire />
                 <TableauGenres />
               </div>
             }
