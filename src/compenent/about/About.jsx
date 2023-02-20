@@ -1,4 +1,5 @@
 import React from 'react';
+import Tom1 from '../../testAPI/Tom1';
 import SearchBar from '../searchBar/SearchBar';
 
 const About = () => {
@@ -13,6 +14,7 @@ const About = () => {
         debitis?
       </p>
       <SearchBar />
+      <Tom1 />
       <br />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis

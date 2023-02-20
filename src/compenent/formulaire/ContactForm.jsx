@@ -9,7 +9,6 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // effectue une action lorsque le formulaire est soumis, par exemple envoie des données à un serveur
   };
 
   return (

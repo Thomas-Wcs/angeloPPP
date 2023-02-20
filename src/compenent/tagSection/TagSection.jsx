@@ -1,17 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './TagSection.css';
 
 const TagSection = () => {
   const [selectedTags, setSelectedTags] = useState([]);
-  console.log(selectedTags);
+  // console.log(selectedTags); m'affiche quels tag sont séléctionnées par l'utilisateur
+  const [moviesTag, setMoviesTag] = useState([]);
+  console.log(moviesTag);
 
   const handleTagSelection = (tag) => {
     if (!selectedTags.includes(tag)) {
       setSelectedTags([...selectedTags, tag]);
     } else {
-      setSelectedTags(selectedTags.filter((hi) => hi !== tag));
+      setSelectedTags(selectedTags.filter((filtreMot) => filtreMot !== tag));
     }
   };
+
+  const getMoviesByGenres = async (genreIds) => {
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=e5952f2708f5284e252d4e51b51aec21&with_genres=${genreIds.join(
+      ','
+    )}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    return data.results;
+  };
+
+  useEffect(() => {
+    if (selectedTags.length > 0) {
+      getMoviesByGenres(selectedTags)
+        .then((data) => setMoviesTag(data))
+        .catch((error) => console.log(error));
+    } else {
+      setMoviesTag([]);
+    }
+  }, [selectedTags]);
 
   return (
     <div className='question-container-tag-div'>
@@ -21,7 +44,7 @@ const TagSection = () => {
           <input
             type='checkbox'
             id='tag1'
-            onChange={() => handleTagSelection('Action')}
+            onChange={() => handleTagSelection(28)}
           />
           <label htmlFor='tag1'>Action</label>
         </div>
@@ -29,7 +52,7 @@ const TagSection = () => {
           <input
             type='checkbox'
             id='tag2'
-            onChange={() => handleTagSelection('aventure')}
+            onChange={() => handleTagSelection(12)}
           />
           <label htmlFor='tag2'>Aventure</label>
         </div>
@@ -37,7 +60,7 @@ const TagSection = () => {
           <input
             type='checkbox'
             id='tag3'
-            onChange={() => handleTagSelection('tag3')}
+            onChange={() => handleTagSelection(16)}
           />
           <label htmlFor='tag3'>Tag 3</label>
         </div>
@@ -45,7 +68,7 @@ const TagSection = () => {
           <input
             type='checkbox'
             id='tag4'
-            onChange={() => handleTagSelection('tag4')}
+            onChange={() => handleTagSelection(35)}
           />
           <label htmlFor='tag4'>Tag 4</label>
         </div>
@@ -53,7 +76,7 @@ const TagSection = () => {
           <input
             type='checkbox'
             id='tag5'
-            onChange={() => handleTagSelection('tag5')}
+            onChange={() => handleTagSelection(80)}
           />
           <label htmlFor='tag5'>Tag 5</label>
         </div>

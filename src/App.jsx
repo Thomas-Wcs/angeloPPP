@@ -7,6 +7,9 @@ import NavBar from './compenent/navBar/NavBar';
 import TagSection from './compenent/tagSection/TagSection';
 import TableauGenres from './compenent/genres/TableauGenres';
 import Questionnaire from './compenent/questions/Questionnaire';
+import Tom1 from './testAPI/Tom1';
+import Test2 from './testAPI/Test2';
+import { MovieContextProvider } from './testAPI/MovieContext';
 
 function App() {
   return (
@@ -17,7 +20,27 @@ function App() {
           <Route path='*' element={<HomePage />} />
           <Route path='/' element={<HomePage />} />
           <Route path='/formulaire' element={<ContactForm />} />
-          <Route path='/about' element={<About />} />
+          <Route
+            path='/about'
+            element={
+              <div>
+                <MovieContextProvider>
+                  <Test2 />
+                </MovieContextProvider>
+                <About />
+              </div>
+            }
+          />
+          <Route
+            path='/Test2'
+            element={
+              <div>
+                <MovieContextProvider>
+                  <Test2 />
+                </MovieContextProvider>
+              </div>
+            }
+          />
           <Route
             path='/pageTest'
             element={
@@ -25,6 +48,7 @@ function App() {
                 <TagSection />
                 <Questionnaire />
                 <TableauGenres />
+                <Tom1 />
               </div>
             }
           />
