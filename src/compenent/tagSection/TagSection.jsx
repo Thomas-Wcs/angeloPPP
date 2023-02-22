@@ -3,15 +3,15 @@ import './TagSection.css';
 
 const TagSection = () => {
   const [selectedTags, setSelectedTags] = useState([]);
-  // console.log(selectedTags); m'affiche quels tag sont séléctionnées par l'utilisateur
+  console.log(selectedTags);
   const [moviesTag, setMoviesTag] = useState([]);
-  console.log(moviesTag);
+  // console.log(moviesTag);
 
   const handleTagSelection = (tag) => {
     if (!selectedTags.includes(tag)) {
       setSelectedTags([...selectedTags, tag]);
     } else {
-      setSelectedTags(selectedTags.filter((filtreMot) => filtreMot !== tag));
+      setSelectedTags(selectedTags.filter((x) => x !== tag));
     }
   };
 
@@ -76,9 +76,9 @@ const TagSection = () => {
           <input
             type='checkbox'
             id='tag5'
-            onChange={() => handleTagSelection(80)}
+            onChange={() => handleTagSelection(14)}
           />
-          <label htmlFor='tag5'>Tag 5</label>
+          <label htmlFor='tag5'>Fantasy</label>
         </div>
       </div>
     </div>

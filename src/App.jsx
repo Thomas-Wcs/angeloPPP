@@ -9,6 +9,7 @@ import TableauGenres from './compenent/genres/TableauGenres';
 import Questionnaire from './compenent/questions/Questionnaire';
 import Tom1 from './testAPI/Tom1';
 import Test2 from './testAPI/Test2';
+
 import { MovieContextProvider } from './testAPI/MovieContext';
 
 function App() {
@@ -24,9 +25,6 @@ function App() {
             path='/about'
             element={
               <div>
-                <MovieContextProvider>
-                  <Test2 />
-                </MovieContextProvider>
                 <About />
               </div>
             }
