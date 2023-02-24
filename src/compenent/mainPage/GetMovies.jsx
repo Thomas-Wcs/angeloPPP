@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getMovies = async (query = '') => {
-  const defaultQuery = 'lover';
+  const defaultQuery = 'lo';
   query = query.trim() || defaultQuery;
   try {
     const response = await axios.get(

@@ -20,7 +20,7 @@ function Questionnaire() {
       selectedOption4 !== ''
     ) {
       const tags = [
-        selectedOption1 === 'oui' ? 'action' : 'comedy',
+        selectedOption1 === 'oui' ? '28' : '16',
         selectedOption2 === 'oui' ? 'adventure' : 'drama',
         selectedOption3 === 'oui' ? 'sci-fi' : 'romance',
         selectedOption4 === 'oui' ? 'thriller' : 'animation',

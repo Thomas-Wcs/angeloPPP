@@ -3,6 +3,8 @@ import './HomePage.css';
 import axios from 'axios';
 import SearchBar from '../searchBar/SearchBar';
 import MovieList from '../movieList/MovieList';
+import TagSection from '../tagSection/TagSection';
+import Questionnaire from '../questions/Questionnaire';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -18,7 +20,7 @@ const HomePage = () => {
   }, [query]);
 
   const getMovies = async (query = '') => {
-    const defaultQuery = '';
+    const defaultQuery = 'lo';
     query = query.trim() || defaultQuery;
     let page = 1;
     const results = [];
@@ -43,6 +45,10 @@ const HomePage = () => {
       <h1 className='page-title'>Kesqu'onRegarde</h1>
       <SearchBar query={query} setQuery={setQuery} />
       <div className='question-section'>
+        <div>
+          <Questionnaire />
+          <TagSection />
+        </div>
         <MovieList movies={movies} />
       </div>
     </div>

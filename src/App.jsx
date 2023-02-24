@@ -7,8 +7,8 @@ import NavBar from './compenent/navBar/NavBar';
 import TagSection from './compenent/tagSection/TagSection';
 import TableauGenres from './compenent/genres/TableauGenres';
 import Questionnaire from './compenent/questions/Questionnaire';
-import Tom1 from './testAPI/Tom1';
 import Test2 from './testAPI/Test2';
+import Footer from './compenent/footer/Footer';
 
 import { MovieContextProvider } from './testAPI/MovieContext';
 
@@ -46,12 +46,12 @@ function App() {
                 <TagSection />
                 <Questionnaire />
                 <TableauGenres />
-                <Tom1 />
               </div>
             }
           />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

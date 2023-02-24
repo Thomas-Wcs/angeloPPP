@@ -14,12 +14,12 @@ const NavBar = () => (
       <li>
         <Link to='/formulaire'>Contact</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to='/pageTest'>Test Page</Link>
       </li>
       <li>
         <Link to='/Test2'>Test 2</Link>
-      </li>
+      </li> */}
     </ul>
   </nav>
 );

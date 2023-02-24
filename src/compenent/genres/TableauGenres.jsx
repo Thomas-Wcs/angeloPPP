@@ -8,7 +8,7 @@ const TableauGenres = () => {
     const fetchGenres = async () => {
       try {
         const response = await axios.get(
-          'https://api.themoviedb.org/3/genre/movie/list?api_key=e5952f2708f5284e252d4e51b51aec21'
+          'https://api.themoviedb.org/3/multi/list?api_key=e5952f2708f5284e252d4e51b51aec21'
         );
         setGenres(response.data.genres);
       } catch (error) {
