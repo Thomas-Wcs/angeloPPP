@@ -9,54 +9,55 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // effectue une action lorsque le formulaire est soumis, par exemple envoie des données à un serveur
   };
 
   return (
-    <form onSubmit={handleSubmit} className='contact-form'>
-      <div className='form-group'>
-        <label htmlFor='first-name'>Prénom:</label>
-        <input
-          type='text'
-          id='first-name'
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          className='form-control'
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='last-name'>Nom:</label>
-        <input
-          type='text'
-          id='last-name'
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className='form-control'
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='email'>E-mail:</label>
-        <input
-          type='email'
-          id='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className='form-control'
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='message'>Message:</label>
-        <textarea
-          id='message'
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className='form-control'
-        ></textarea>
-      </div>
-      <button type='submit' className='btn btn-primary'>
-        Envoyer
-      </button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit} className='contact-form'>
+        <div className='form-group'>
+          <label htmlFor='first-name'>Prénom:</label>
+          <input
+            type='text'
+            id='first-name'
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='last-name'>Nom:</label>
+          <input
+            type='text'
+            id='last-name'
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='email'>E-mail:</label>
+          <input
+            type='email'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='message'>Message:</label>
+          <textarea
+            id='message'
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className='form-control'
+          ></textarea>
+        </div>
+        <button type='submit' className='btn btn-primary'>
+          Envoyer
+        </button>
+      </form>
+    </div>
   );
 }
 

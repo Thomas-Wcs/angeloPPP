@@ -1,21 +1,25 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/jsx-no-comment-textnodes */
-// NavBar.jsx
 import React from 'react';
 import './NavBar.css';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => (
   <nav className='navbar'>
     <ul>
       <li>
-        <a href='#'>Accueil</a>
+        <Link to='/'>Accueil</Link>
       </li>
       <li>
-        <a href='#'>À propos</a>
+        <Link to='/about'>About</Link>
       </li>
       <li>
-        <a href='#'>Contact</a>
+        <Link to='/formulaire'>Contact</Link>
       </li>
+      {/* <li>
+        <Link to='/pageTest'>Test Page</Link>
+      </li>
+      <li>
+        <Link to='/Test2'>Test 2</Link>
+      </li> */}
     </ul>
   </nav>
 );
